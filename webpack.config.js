@@ -9,9 +9,12 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
     environment: {
-      arrowFunction: false
+      arrowFunction: false,
+      const: false
     }
   },
+
+  mode: 'production',
 
   module: {
     rules: [
@@ -27,7 +30,7 @@ module.exports = {
                   '@babel/preset-env',
                   {
                     targets: {
-                      'chrome': '58',
+                      'chrome': '88',
                       'ie': '10'
                     },
                     'corejs': '3',
@@ -78,5 +81,9 @@ module.exports = {
 
   resolve: {
     extensions: ['.ts', '.js']
+  },
+
+  performance: {
+    hints: false
   }
 }
